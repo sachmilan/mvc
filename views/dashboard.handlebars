@@ -1,0 +1,68 @@
+{{#if posts.length}}
+<div class="display-flex justify-center row">
+    <div class="col-sm-10 col-lg-8">
+        <section class="card mx-3">
+            <div class="card-header text-center dash-header">
+                My Posts
+            </div>
+            <div class="card-body">  
+                {{#each posts}}
+                    
+                    <div class="display-flex justify-center row">
+                        <div class="col-sm-12">
+                            <a href="/dashboard/edit/{{id}}">
+                                <article class="card mx-3 mt-3">
+                                    <div class="card-header">
+                                        <div class="flex-row justify-space-between">
+                                            <div class="header-text dash-card-header">
+                                                {{title}}
+                                            </div>
+                                            <div class="header-text dash-card-header">
+                                                Posted on {{format_date created_at}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body dash-card">  
+                                            {{post_content}}
+                                        <div class="card-footer mt-1 dash-card">  
+                                            {{comments.length}} {{format_plural 'comment' comments.length}}
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                    
+                {{/each}} 
+            </div>
+        </section>
+    </div>
+</div>
+{{/if}}
+
+<div class="display-flex justify-center row">
+    <div class="col-sm-10 col-lg-8">
+        <section class="card mx-3" id="new-post-card" hidden>
+            <div class="card-header text-center dash-header">New Post</div>
+            <div class="card-body ">
+                <form class="new-post-form my-2">
+                    <div class="mx-1">
+                        <input class="form-input" id="post-title" type="text" name="post-title" placeholder="Title"/>
+                    </div>
+                    <div class="mx-1">
+                        <textarea class="form-textarea mb-2" id="post-content" name="post-content" placeholder="Type your post here"></textarea>
+                    </div>
+                    <div class="mx-1">
+                        <button type="submit" class="btn">Submit Post</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="text-center mt-5 new-post-btn-container">
+    <button id="new-post-btn" class="btn">➕ New Post</button> 
+</div>
+
+<script src="/js/new-post.js"></script> 

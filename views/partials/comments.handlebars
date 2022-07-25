@@ -1,0 +1,28 @@
+<div class="display-flex justify-center row">
+    <div class="col-sm-10 col-lg-8">
+        <section class="comments card mx-3"> 
+            <div class="card-body">
+                <div class="mx-1">
+                    {{post.comments.length}} {{format_plural 'comment' post.comments.length}}
+                </div>
+
+                {{#if loggedIn}}
+
+                    {{> comment-form}}
+
+                {{/if}}
+                    <div class="mb-2"></div>
+                {{#if post.comments}}
+                    <div class="card-footer">
+                {{#each post.comments}}
+                        <p class="mt-3">
+                            <b>{{user.username}} on {{format_date created_at}}</b>
+                            <br> >{{comment_content}}
+                        </p>
+                {{/each}}
+                    </div>
+                {{/if}}
+            </div> 
+        </section>
+    </div>
+</div>

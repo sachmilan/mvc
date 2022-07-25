@@ -1,16 +1,14 @@
-module.exports={
-    format_time:(date)=>{
-        return date.toLocaleTimeString();
+module.exports = {
+    format_time: (date) => {
+      return date.toLocaleTimeString();
     },
-    
-    forma_date:(date)=>{
-        return date.toLocaleTimeString('en-US');
+    format_date: (date) => {
+      return date.toLocaleDateString('en-US');
     },
-
-    format_plural: (word,commentLength)=>{
-        if (commentLength ===1){
+    format_plural: (word, commentsLength) => {
+        if (commentsLength === 1) {
             return word;
         }
-        return `${word}s`
+        return `${word}s`;
     }
-};
+  };

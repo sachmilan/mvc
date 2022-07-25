@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Raleway&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/jass.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+
+    <header class="sticky">
+        <nav class="flex-row justify-space-between nav-bar">
+                <ul class="menu"> 
+                        <a href="/">Tech-Blog</a>
+                </ul>
+            
+                <ul class="menu">
+                    <li class="mx-1">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="mx-1">
+                        <a href="/dashboard">Dashboard</a>
+                    </li>
+                    {{#if loggedIn}}
+                    <li class="mx-1">
+                        <a id="logout">Log Out</a>
+                    </li>
+                    {{else}}
+                    <li class="mx-1">
+                        <a href="/login">Log In</a>
+                    </li>
+                    <li class="mx-1">
+                        <a href="/signup">Sign Up</a>
+                    </li>
+                    {{/if}}
+                </ul>
+        </nav>
+    </header>
+    
+    <main class="content">
+        {{{ body }}}
+    </main>
+
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
