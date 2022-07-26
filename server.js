@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-console.log("server.js2")
+console.log("server.js22")
 
 const sess = {
   secret: 'Super secret secret',
