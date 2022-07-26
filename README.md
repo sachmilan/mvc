@@ -31,6 +31,8 @@ Using this techblog application is really easy. All tou have to type in the the 
 
 ![alt text](assets/images/screenshot.png)
 
+https://sachmilan.github.io/mvc/
+
 
 ## Features
 
