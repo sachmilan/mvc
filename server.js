@@ -7,10 +7,14 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+console.log("server.js1")
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
+
+console.log("server.js2")
 
 const sess = {
   secret: 'Super secret secret',
@@ -25,6 +29,8 @@ const sess = {
   })
 };
 
+console.log("server.js3")
+
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
@@ -35,6 +41,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+console.log("server.js4")
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
